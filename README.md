@@ -30,6 +30,24 @@ Classic Atari Assault where the agent controls a defensive cannon that must dest
 
 ## Training Results and Analysis
 
+![image](image_plot/Figure_1.png)
+
+The training curves demonstrate significant differences between policy architectures and hyperparameter configurations:
+
+**MLP Policy Superiority:**
+- **Set 1 MLP** achieved exceptional performance with a final mean reward of approximately **366**
+- Demonstrated **rapid improvement** and sustained high performance throughout training
+- **Effective feature extraction** from simplified, preprocessed observations (grayscale, resized, flattened)
+- Consistent learning curve with minimal volatility after initial improvement phase
+
+**CNN Policy Performance:**
+- All CNN-based policies achieved **moderate performance** (final rewards below 100)
+- **Set 4 CNN** performed best among CNN configurations (~98 reward) due to:
+  - Aggressive exploration parameters (0.5→0.02 epsilon decay)
+  - Smaller buffer sizes enabling faster adaptation
+  - Higher learning rate (1e-3) for responsive updates
+- CNN architectures required more extensive tuning and showed slower convergence
+
 ### Performance Summary
 
 | Configuration | Final Mean Reward | Episode Length (avg) | Learning Characteristics | Performance Rank |
@@ -197,7 +215,7 @@ python play_mllp.py
 
 ## Team Members
 
-- Dieudonne Kobobey Ngum
-- Eunice Adebusayo Adewusi
-- Jean Chrisostome Dufitumukiza
-- Mahamat Hissein Ahmat
+- Dieudonne Kobobey Ngum - worked on task 2 & training curves
+- Eunice Adebusayo Adewusi - worked on task 2 & README
+- Jean Chrisostome Dufitumukiza - worked on task 1 & as team coach
+- Mahamat Hissein Ahmat - worked on task 1 & facilitated meetings
