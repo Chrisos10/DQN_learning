@@ -2,7 +2,7 @@
 
 This project implements a Deep Q-Network (DQN) agent using Stable Baselines3 and Gymnasium to train and evaluate performance on the Atari Assault environment. We conducted comprehensive hyperparameter tuning across 5 different configurations and compared CNN vs MLP policy architectures to understand their impact on learning strategies and performance.
 
-https://github.com/user-attachments/assets/5cc38c44-cecd-4be8-b816-6a061c369f65
+https://github.com/user-attachments/assets/8c02207f-23d5-4673-a81b-af7e58d99b4a
 
 *Our best-performing DQN Agent - Set 4 CNN (Best Performance) playing Atari Assault for 3 episodes with 1000-1500 steps, showing learned survival strategies*
 
