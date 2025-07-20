@@ -1,0 +1,13 @@
+{
+    "id": "set4",
+    "learning_rate": 0.001,
+    "gamma": 0.9,
+    "batch_size": 16,
+    "buffer_size": 25000,
+    "exploration_initial_eps": 0.5,
+    "exploration_final_eps": 0.02,
+    "exploration_fraction": 0.05,
+    "learning_starts": 1000,
+    "train_freq": 1,
+    "target_update_interval": 100
+}
