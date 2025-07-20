@@ -8,7 +8,7 @@ import ale_py
 from ale_py import ALEInterface
 import numpy as np
 
-# === Settings ===
+# === Settings and Environment Setup ===
 ale = ALEInterface()
 gym.register_envs(ale_py)
 
@@ -29,6 +29,7 @@ def make_env():
 env = DummyVecEnv([make_env()])
 env = VecFrameStack(env, n_stack=1)
 
+# === Load the pre-trained DQN model ===
 model_path = "models/set1_mlppolicy/best/best_model"
 model = DQN.load(model_path, env=env, device=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 
@@ -36,6 +37,8 @@ print("Loaded MLP model:", model_path)
 print("Running agent... Press Ctrl+C to exit.")
 
 obs = env.reset()
+
+# === Main loop for playing the game ===
 while True:
     action, _ = model.predict(obs, deterministic=True)
     obs, reward, done, info = env.step(action)

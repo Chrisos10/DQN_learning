@@ -7,7 +7,7 @@ from stable_baselines3.common.vec_env import DummyVecEnv, VecFrameStack
 import ale_py
 from ale_py import ALEInterface
 
-# === Settings ===
+# === Settings and Environment Setup ===
 ale = ALEInterface()
 gym.register_envs(ale_py)
 
@@ -21,6 +21,7 @@ def make_env():
 env = DummyVecEnv([make_env()])
 env = VecFrameStack(env, n_stack=1)
 
+# === Load the pre-trained DQN model ===
 model = DQN.load(
     "models/set1_cnnpolicy/best/best_model",
     env=env,
@@ -34,6 +35,7 @@ model = DQN.load(
 obs = env.reset()
 done = False
 
+# === Main loop for playing the game ===
 while True:
     action, _ = model.predict(obs, deterministic=True)
     obs, reward, done, info = env.step(action)
