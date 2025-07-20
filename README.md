@@ -1,25 +1,21 @@
 # Deep Q-learning With Atari - Peer Group 1
 
-https://github.com/user-attachments/assets/5cc38c44-cecd-4be8-b816-6a061c369f65
-
 This project implements a Deep Q-Network (DQN) agent using Stable Baselines3 and Gymnasium to train and evaluate performance on the Atari Assault environment. We conducted comprehensive hyperparameter tuning across 5 different configurations and compared CNN vs MLP policy architectures to understand their impact on learning strategies and performance.
+
+https://github.com/user-attachments/assets/5cc38c44-cecd-4be8-b816-6a061c369f65
+*Our best-performing DQN Agent - Set 4 CNN (Best Performance) playing Atari Assault for 3 episodes with 1000-1500 steps, showing learned survival strategies*
 
 ## Environment
 
-At first, we tried the Space Invaders environment but both the CNN and MLP weren’t learning plus it was taking longer training time even after changing parameters, making us choose another that has interpretable results.
+At first, we tried the Space Invaders environment, but both the CNN and MLP weren't learning, and training time was really long even after adjusting parameters. This led us to use an alternative environment with more interpretable results.
 
-Selected Environment: `ALE/Assault-v5` (AssaultNoFrameskip-v4 for training)
+**Selected Environment:** `ALE/Assault-v5` (AssaultNoFrameskip-v4 for training)
 
 Classic Atari Assault where the agent controls a defensive cannon that must destroy enemy aircraft formations while avoiding enemy fire. The objective is to maximize score by eliminating enemies while maintaining survival over extended periods.
 
-Action Space: Discrete(7) - [NOOP, FIRE, UP, RIGHT, LEFT, DOWN, plus directional firing combinations]
+**Action Space:** Discrete(7) - [NOOP, FIRE, UP, RIGHT, LEFT, DOWN, plus directional firing combinations]
 
-Observation Space: Box(0, 255, (210, 160, 3), uint8) - Raw Atari screen pixels
-
-**Key Challenges:**
-- Visual pattern recognition for enemy formations
-- Temporal decision making for survival vs scoring
-- Balance between aggressive scoring and defensive positioning
+**Observation Space:** Box(0, 255, (210, 160, 3), uint8) - Raw Atari screen pixels
 
 ## Hyperparameter Tuning Results
 
@@ -43,7 +39,8 @@ Observation Space: Box(0, 255, (210, 160, 3), uint8) - Raw Atari screen pixels
 | **Set 4 (CNN)** | **~98** | **1,300+ steps** | **Optimal: fast + strategic** | **1st** |
 | Set 1 (MLP) | 370* | 400 steps | High scores, poor survival | Special case |
 
-*MLP scores misleading due to unsustainable strategy
+- Set 4 CNN is our best-performing DQN Agent
+- MLP scores misleading due to unsustainable strategy
 
 ### Key Hyperparameter Insights
 
@@ -105,29 +102,6 @@ This finding has significant implications for AI system deployment:
 - **Medical AI:** Patient safety over diagnostic speed
 - **Robotics:** Sustainable operation over peak performance bursts
 - **AI Evaluation:** Metric selection crucial for real-world effectiveness
-
-## Agent Demonstration
-
-### Gameplay Video
-
-[**DQN Agent Gameplay Video - Set 4 CNN (Best Performance)**](DQN_Set4_CNN_Gameplay.mp4)
-
-**Video Contents:**
-The video demonstrates our best-performing DQN agent (Set 4 CNN configuration) playing Atari Assault for 3 episodes, showing:
-
-- **play.py script execution** with successful model loading
-- **Agent-environment interaction** in real-time gameplay
-- **Strategic decision making** with survival-focused behavior
-- **Consistent performance** across multiple episodes (~95-100 reward range)
-- **Long episode duration** (1000-1500 steps) demonstrating learned survival strategies
-- **GreedyQPolicy implementation** with deterministic action selection
-
-**Key Observations from Video:**
-- Agent demonstrates learned defensive positioning
-- Strategic timing of offensive actions
-- Effective enemy formation recognition
-- Clear evidence of spatial pattern learning
-- Sustainable gameplay strategy validation
 
 ## Technical Implementation Details
 
