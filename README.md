@@ -48,6 +48,8 @@ The training curves demonstrate significant differences between policy architect
   - Higher learning rate (1e-3) for responsive updates
 - CNN architectures required more extensive tuning and showed slower convergence
 
+**NOTE:** Although MLP achieved a great performace, we will be going with the best CNN Agent because CNNs, with their ability to learn spatial hier-archies, are particularly powerful when dealing with visual data like images or video frames in reinforcement learning scenarios which in our case, is a video frame.
+
 ### Performance Summary
 
 | Configuration | Final Mean Reward | Episode Length (avg) | Learning Characteristics | Performance Rank |
