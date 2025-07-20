@@ -1,5 +1,7 @@
 # Deep Q-learning With Atari - Peer Group 1
-  
+
+https://github.com/user-attachments/assets/5cc38c44-cecd-4be8-b816-6a061c369f65
+
 This project implements a Deep Q-Network (DQN) agent using Stable Baselines3 and Gymnasium to train and evaluate performance on the Atari Assault environment. We conducted comprehensive hyperparameter tuning across 5 different configurations and compared CNN vs MLP policy architectures to understand their impact on learning strategies and performance.
 
 ## Environment
