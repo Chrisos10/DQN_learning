@@ -23,7 +23,7 @@ env = VecFrameStack(env, n_stack=1)
 
 # === Load the pre-trained DQN model ===
 model = DQN.load(
-    "models/set1_cnnpolicy/best/best_model",
+    "models/set1_cnnpolicy/best/final_model",
     env=env,
     device=torch.device("cuda" if torch.cuda.is_available() else "cpu"),
     custom_objects={
